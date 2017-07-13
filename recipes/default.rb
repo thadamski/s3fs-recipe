@@ -82,7 +82,7 @@ if node['s3fs']['build_from_source']
     tar zxvf s3fs-fuse-#{node['s3fs']['version']}.tar.gz
     cd s3fs-fuse-#{node['s3fs']['version']}
     ./autogen.sh
-    ./configure --prefix=/usr
+    PKG_CONFIG=/usr/bin/pkg-config ./configure --prefix=/usr
     make
     make install
   "
